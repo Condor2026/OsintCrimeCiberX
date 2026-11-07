@@ -13,7 +13,7 @@
 
 Envía un email a:
 
-📬 **KiraSecurity@proton.me**
+📬 **SpectrumSecIt@proton.me**
 
 Incluye, si es posible:
 
