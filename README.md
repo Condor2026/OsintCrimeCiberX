@@ -98,15 +98,15 @@ Si no las tienes, la herramienta funciona igual (con `urllib` y un parser propio
 ### Clonar y ejecutar
 
 ```bash
-git clone https://github.com/Condor2026/osint-crimen-cyber
-cd osint-crimen-cyber
-python osint_crimen_cyber.py
+git clone https://github.com/Condor2026/OsintCrimeCiberX
+cd OsintCrimeCiberX
+python OsintCrimeCiberX.py
 ```
 
 Para el panel web:
 
 ```bash
-python osint_crimen_cyber.py --web --port 8765
+python OsintCrimeCiberX.py --web --port 8765
 ```
 
 Abre `http://127.0.0.1:8765` en el navegador.
@@ -119,37 +119,37 @@ Abre `http://127.0.0.1:8765` en el navegador.
 
 ```bash
 # Buscar en modo crimen (por defecto)
-python osint_crimen_cyber.py --buscar "Cartel de Sinaloa"
+python OsintCrimeCiberX.py --buscar "Cartel de Sinaloa"
 
 # Buscar en modo cyber
-python osint_crimen_cyber.py --buscar "LockBit" --mode cyber
+python OsintCrimeCiberX.py --buscar "LockBit" --mode cyber
 
 # Ver ficha de una entidad
-python osint_crimen_cyber.py --report 42
+python OsintCrimeCiberX.py --report 42
 
 # Generar dossier HTML
-python osint_crimen_cyber.py --dossier 42 dossier_lockbit.html
+python OsintCrimeCiberX.py --dossier 42 dossier_lockbit.html
 
 # Ver mensajes de Telegram (estilo Andrómeda)
-python osint_crimen_cyber.py --feed --feed-group KillNet --feed-limit 30
+python OsintCrimeCiberX.py --feed --feed-group KillNet --feed-limit 30
 
 # Estadísticas de los mensajes
-python osint_crimen_cyber.py --feed-stats
+python OsintCrimeCiberX.py --feed-stats
 
 # Historia de un grupo
-python osint_crimen_cyber.py --group KillNet
+python OsintCrimeCiberX.py --group KillNet
 
 # Exportar base completa a JSON
-python osint_crimen_cyber.py --export dump.json
+python OsintCrimeCiberX.py --export dump.json
 
 # Exportar grafo de co-ocurrencias
-python osint_crimen_cyber.py --export-graph grafo.graphml
+python OsintCrimeCiberX.py --export-graph grafo.graphml
 ```
 
 ### Panel web
 
 ```bash
-python osint_crimen_cyber.py --web --port 8765
+python OsintCrimeCiberX.py --web --port 8765
 ```
 
 Rutas principales:
@@ -166,13 +166,13 @@ Rutas principales:
 2. Impórtalos:
 
 ```bash
-python osint_crimen_cyber.py --tg-import
+python OsintCrimeCiberX.py --tg-import
 ```
 
 3. Escanea (modo pasivo, respeta límites automáticamente):
 
 ```bash
-python osint_crimen_cyber.py --tg-update --tg-pages 0 --tg-workers 0
+python OsintCrimeCiberX.py --tg-update --tg-pages 0 --tg-workers 0
 ```
 
 > Las invitaciones privadas (`t.me/+hash`) **no se pueden leer** con este método. Solo canales públicos.
@@ -244,8 +244,8 @@ El archivo `cracker_dict.txt` contiene ~600 nombres de grupos, APTs, ransomware 
 2. **Puntuar** los resultados (los que coinciden suben al principio; los que no, quedan neutros, no se descartan).
 
 ```bash
-python osint_crimen_cyber.py --dict-stats
-python osint_crimen_cyber.py --dict-test KillNet
+python OsintCrimeCiberX.py --dict-stats
+python OsintCrimeCiberX.py --dict-test KillNet
 ```
 
 ---
@@ -253,10 +253,10 @@ python osint_crimen_cyber.py --dict-test KillNet
 ## 📄 Exportes
 
 ```bash
-python osint_crimen_cyber.py --dossier 42 dossier.html
-python osint_crimen_cyber.py --export-graph grafo.graphml
-python osint_crimen_cyber.py --export dump.json
-python osint_crimen_cyber.py --history-export historial.json
+python OsintCrimeCiberX.py --dossier 42 dossier.html
+python OsintCrimeCiberX.py --export-graph grafo.graphml
+python OsintCrimeCiberX.py --export dump.json
+python OsintCrimeCiberX.py --history-export historial.json
 ```
 
 ---
@@ -297,7 +297,7 @@ El autor ofrece servicios de inteligencia sobre esta base:
 - **Formación** en OSINT.
 - **Desarrollo de tooling a medida**.
 
-📬 **Contacto comercial**: KiraSecurity@proton.me
+📬 **Contacto comercial**: SpectrumSecIt@proton.me
 
 ---
 
