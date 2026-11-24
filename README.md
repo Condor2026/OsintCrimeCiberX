@@ -5,6 +5,28 @@
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)]()
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Version](https://img.shields.io/badge/version-1.15.0-green.svg)]()
+[![osint](https://img.shields.io/badge/osint-00D4FF)](https://github.com/topics/osint)
+[![telegram-osint](https://img.shields.io/badge/telegram--osint-00D4FF)](https://github.com/topics/telegram-osint)
+[![telegram-scraper](https://img.shields.io/badge/telegram--scraper-00D4FF)](https://github.com/topics/telegram-scraper)
+[![social-media-osint](https://img.shields.io/badge/social--media--osint-00D4FF)](https://github.com/topics/social-media-osint)
+[![humint](https://img.shields.io/badge/humint-00D4FF)](https://github.com/topics/humint)
+[![threat-intelligence](https://img.shields.io/badge/threat--intelligence-8B5CF6)](https://github.com/topics/threat-intelligence)
+[![threat-intel](https://img.shields.io/badge/threat--intel-8B5CF6)](https://github.com/topics/threat-intel)
+[![cyber-threat-intelligence](https://img.shields.io/badge/cyber--threat--intelligence-8B5CF6)](https://github.com/topics/cyber-threat-intelligence)
+[![cti](https://img.shields.io/badge/cti-8B5CF6)](https://github.com/topics/cti)
+[![threat-hunting](https://img.shields.io/badge/threat--hunting-8B5CF6)](https://github.com/topics/threat-hunting)
+[![ioc](https://img.shields.io/badge/ioc-8B5CF6)](https://github.com/topics/ioc)
+[![c2](https://img.shields.io/badge/c2-8B5CF6)](https://github.com/topics/c2)
+[![malware-analysis](https://img.shields.io/badge/malware--analysis-8B5CF6)](https://github.com/topics/malware-analysis)
+[![ransomware](https://img.shields.io/badge/ransomware-8B5CF6)](https://github.com/topics/ransomware)
+[![apt](https://img.shields.io/badge/apt-8B5CF6)](https://github.com/topics/apt)
+[![hacktivism](https://img.shields.io/badge/hacktivism-8B5CF6)](https://github.com/topics/hacktivism)
+[![threat-intelligence-platform](https://img.shields.io/badge/threat--intelligence--platform-FFBE0B)](https://github.com/topics/threat-intelligence-platform)
+[![data-aggregator](https://img.shields.io/badge/data--aggregator-FFBE0B)](https://github.com/topics/data-aggregator)
+[![data-collection](https://img.shields.io/badge/data--collection-FFBE0B)](https://github.com/topics/data-collection)
+[![self-hosted](https://img.shields.io/badge/self--hosted-FFBE0B)](https://github.com/topics/self-hosted)
+[![cybersecurity](https://img.shields.io/badge/cybersecurity-FFBE0B)](https://github.com/topics/cybersecurity)
+[![infosec](https://img.shields.io/badge/infosec-FFBE0B)](https://github.com/topics/infosec)
 
 > ⚠️ **Aviso legal**: herramienta de investigación. Los resultados son coincidencias textuales automáticas y **no implican vinculación ni responsabilidad**. Verifica siempre en la fuente original. Ver [LEGAL.md](LEGAL.md).
 
@@ -15,6 +37,40 @@
 ## 🇬🇧 English summary
 
 A dual-mode OSINT toolkit (Python 3.8+) for **organized crime** and **cyber threat intelligence**. It aggregates 15+ public sources (Wikidata, GDELT, MITRE ATT&CK, OFAC, UN, OpenSanctions, URLhaus, Feodo, Ransomware.live, 46 cybersecurity feeds, passive Telegram scraping), classifies findings with an Andrómeda-style ruleset (health 🏥 / energy ⚡ threat detection included) and serves a self-hosted web panel with world map, charts, translation and persistent history. **Free and open source under AGPL-3.0.** See [LEGAL.md](LEGAL.md) for GDPR notes.
+
+---
+
+## 🧩 Ecosistema Nexus · cada herramienta en su casa
+
+OSINT Crimen + Cyber forma parte del ecosistema **Nexus**, un conjunto de herramientas independientes que se comunican por APIs HTTP locales. Cada una vive en su propio repositorio y se puede usar por separado.
+
+| Herramienta | Rol | Repositorio | Estado |
+|---|---|---|---|
+| **Nexus_Osint_X** | Base central de mando OSINT (radar, mapa 3D, correlación, ATT&CK, panel JARVIS) | `Condor2026/Nexus_Osint_X` | Prototipo funcional (v3.1) |
+| **OsintCiberCrimeX** (este repo) | **Buscador OSINT dual** (crimen + cyber) en Telegram y 15+ fuentes: IOCs, C2, CVE, grupos, canales | `Condor2026/OsintCiberCrimeX` | **v1.15.0** funcional · publicación ampliada **dic 2026** |
+| **ThreatJarvisX** | Asistente IA que consulta Nexus por su API | repositorio propio | Activo |
+| **Puente_Nexus** | Enlace OsintCiberCrimeX ↔ Nexus (lanza, vigila, sincroniza) | `Condor2026/Nexus_Osint_X` | v1.1 funcional |
+
+**Cómo encaja todo:**
+
+```
+┌───────────────────┐        ┌──────────────────┐        ┌─────────────────┐
+│ OsintCiberCrimeX  │  IOCs  │  Puente_Nexus    │ watch  │  Nexus_Osint_X  │
+│   (este repo)     │ ─────► │  (repo Nexus)    │ ─────► │ (mando OSINT)   │
+└───────────────────┘        └──────────────────┘        └─────────────────┘
+                                                                  ▲
+                                                                  │ API HTTP
+                                                           ┌──────┴───────┐
+                                                           │ ThreatJarvisX │
+                                                           │  (asistente)  │
+                                                           └───────────────┘
+```
+
+- **OsintCiberCrimeX** funciona **solo**, sin Nexus. Es el buscador.
+- **Nexus_Osint_X** funciona **solo**, sin OsintCiberCrimeX. Es el radar.
+- **Puente_Nexus** es el que los conecta: sincroniza los IOCs de OsintCiberCrimeX a la watchlist de Nexus y cruza eventos. Sin el puente, las dos herramientas no se hablan (lo cual es perfectamente válido).
+
+> **Este repo solo contiene OsintCiberCrimeX.** Nexus_Osint_X, ThreatJarvisX y el Puente_Nexus viven en sus propios repositorios. La integración con el puente se detalla en la sección [Integración con Nexus](#-integración-con-nexus-puente_nexus).
 
 ---
 
@@ -98,15 +154,15 @@ Si no las tienes, la herramienta funciona igual (con `urllib` y un parser propio
 ### Clonar y ejecutar
 
 ```bash
-git clone https://github.com/Condor2026/OsintCrimeCiberX
-cd OsintCrimeCiberX
-python OsintCrimeCiberX.py
+git clone https://github.com/Condor2026/OsintCiberCrimeX
+cd OsintCiberCrimeX
+python OsintCiberCrimeX.py
 ```
 
 Para el panel web:
 
 ```bash
-python OsintCrimeCiberX.py --web --port 8765
+python OsintCiberCrimeX.py --web --port 8765
 ```
 
 Abre `http://127.0.0.1:8765` en el navegador.
@@ -119,37 +175,37 @@ Abre `http://127.0.0.1:8765` en el navegador.
 
 ```bash
 # Buscar en modo crimen (por defecto)
-python OsintCrimeCiberX.py --buscar "Cartel de Sinaloa"
+python OsintCiberCrimeX.py --buscar "Cartel de Sinaloa"
 
 # Buscar en modo cyber
-python OsintCrimeCiberX.py --buscar "LockBit" --mode cyber
+python OsintCiberCrimeX.py --buscar "LockBit" --mode cyber
 
 # Ver ficha de una entidad
-python OsintCrimeCiberX.py --report 42
+python OsintCiberCrimeX.py --report 42
 
 # Generar dossier HTML
-python OsintCrimeCiberX.py --dossier 42 dossier_lockbit.html
+python OsintCiberCrimeX.py --dossier 42 dossier_lockbit.html
 
 # Ver mensajes de Telegram (estilo Andrómeda)
-python OsintCrimeCiberX.py --feed --feed-group KillNet --feed-limit 30
+python OsintCiberCrimeX.py --feed --feed-group KillNet --feed-limit 30
 
 # Estadísticas de los mensajes
-python OsintCrimeCiberX.py --feed-stats
+python OsintCiberCrimeX.py --feed-stats
 
 # Historia de un grupo
-python OsintCrimeCiberX.py --group KillNet
+python OsintCiberCrimeX.py --group KillNet
 
 # Exportar base completa a JSON
-python OsintCrimeCiberX.py --export dump.json
+python OsintCiberCrimeX.py --export dump.json
 
 # Exportar grafo de co-ocurrencias
-python OsintCrimeCiberX.py --export-graph grafo.graphml
+python OsintCiberCrimeX.py --export-graph grafo.graphml
 ```
 
 ### Panel web
 
 ```bash
-python OsintCrimeCiberX.py --web --port 8765
+python OsintCiberCrimeX.py --web --port 8765
 ```
 
 Rutas principales:
@@ -166,16 +222,51 @@ Rutas principales:
 2. Impórtalos:
 
 ```bash
-python OsintCrimeCiberX.py --tg-import
+python OsintCiberCrimeX.py --tg-import
 ```
 
 3. Escanea (modo pasivo, respeta límites automáticamente):
 
 ```bash
-python OsintCrimeCiberX.py --tg-update --tg-pages 0 --tg-workers 0
+python OsintCiberCrimeX.py --tg-update --tg-pages 0 --tg-workers 0
 ```
 
 > Las invitaciones privadas (`t.me/+hash`) **no se pueden leer** con este método. Solo canales públicos.
+
+---
+
+## 🔗 Integración con Nexus (Puente_Nexus)
+
+El **Puente_Nexus** (incluido en el repo de **Nexus_Osint_X**) conecta esta herramienta con la base de mando **Nexus_Osint_X**. Funciona como un proceso aparte: lanza/vigila ambas, sincroniza IOCs y cruza eventos. **No modifica** ni este repo ni Nexus.
+
+### Qué necesita del lado de OsintCiberCrimeX
+
+Según el puente v1.1, se consumen estos endpoints:
+
+| Método | Ruta | Para qué |
+|---|---|---|
+| `GET` | `/api/escaner` | Healthcheck / estado del escáner |
+| `GET` | `/api/iocs?c2=1` | IOCs marcados como C2 |
+| `GET` | `/api/iocs?ioc_tipo=ip` | IOCs de tipo IP |
+| `GET` | `/api/iocs?ioc_tipo=cve` | IOCs de tipo CVE |
+
+> ⚠️ La versión actual (`v1.15.0`) expone `/api/mensajes`. Los endpoints `/api/escaner` y `/api/iocs` están **previstos para la release ampliada de diciembre 2026** para compatibilidad total con el puente. Hasta entonces, la sincronización automática OsintCiberCrimeX → Nexus quedará limitada a lo que el puente pueda leer. La herramienta funciona igual sin el puente.
+
+### Cómo arrancar el ecosistema completo
+
+Con `OsintCiberCrimeX.py`, `Nexus_Osint_X.py` y `Puente_Nexus.py` en la misma carpeta:
+
+```bash
+python Puente_Nexus.py --all
+# → lanza OsintCiberCrimeX (8765) + Nexus (8000) + panel del puente (8800)
+# → sincroniza IOCs a la watchlist de Nexus cuando la API esté disponible
+```
+
+Ver el repo de **Nexus_Osint_X** para más detalles del puente.
+
+### Contacto para servicios
+
+El autor ofrece servicios de inteligencia sobre esta base (informes CTI, monitorización, dossiers, formación, tooling a medida). Contacto comercial: **SpectrumSecIt@proton.me**.
 
 ---
 
@@ -244,8 +335,8 @@ El archivo `cracker_dict.txt` contiene ~600 nombres de grupos, APTs, ransomware 
 2. **Puntuar** los resultados (los que coinciden suben al principio; los que no, quedan neutros, no se descartan).
 
 ```bash
-python OsintCrimeCiberX.py --dict-stats
-python OsintCrimeCiberX.py --dict-test KillNet
+python OsintCiberCrimeX.py --dict-stats
+python OsintCiberCrimeX.py --dict-test KillNet
 ```
 
 ---
@@ -253,11 +344,38 @@ python OsintCrimeCiberX.py --dict-test KillNet
 ## 📄 Exportes
 
 ```bash
-python OsintCrimeCiberX.py --dossier 42 dossier.html
-python OsintCrimeCiberX.py --export-graph grafo.graphml
-python OsintCrimeCiberX.py --export dump.json
-python OsintCrimeCiberX.py --history-export historial.json
+python OsintCiberCrimeX.py --dossier 42 dossier.html
+python OsintCiberCrimeX.py --export-graph grafo.graphml
+python OsintCiberCrimeX.py --export dump.json
+python OsintCiberCrimeX.py --history-export historial.json
 ```
+
+---
+
+## 📁 Estructura del repo
+
+```
+.
+├── OsintCiberCrimeX.py         # Aplicación completa (v1.15.0)
+├── tg_channels.txt             # Lista de canales públicos (una por línea)
+├── cracker_dict.txt            # Diccionario de ~600 grupos/APTs/ransomware
+├── requirements.txt            # Dependencias opcionales
+├── .env.example                # Variables de configuración (opcional)
+├── .gitignore
+├── LICENSE
+├── README.md
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── SECURITY.md
+├── LEGAL.md
+├── ACCESSIBILITY.md
+├── .github/
+│   └── PULL_REQUEST_TEMPLATE.md
+└── image(1).jpg                # Imagen de cabecera
+```
+
+Archivos que se crean en runtime (no versionados): base de datos local, cachés, historial, logs. Ver `.gitignore`.
 
 ---
 
