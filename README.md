@@ -1,32 +1,12 @@
-# 🛡️ OSINT Crimen + Cyber
+# 🔎 OsintCiberCrimeX · Buscador OSINT potenciado de crimen y cyber
 
-**Toolkit OSINT dual para investigación de crimen organizado y ciberataques.**
+**Buscador especializado en crimen organizado y ciberamenazas.** No es un agregador de feeds ni un simple scraper: es un **motor de búsqueda** con índice propio, lógica de consulta específica y capacidad de scraping para alimentarse.
 
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)]()
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Version](https://img.shields.io/badge/version-1.15.0-green.svg)]()
-[![osint](https://img.shields.io/badge/osint-00D4FF)](https://github.com/topics/osint)
-[![telegram-osint](https://img.shields.io/badge/telegram--osint-00D4FF)](https://github.com/topics/telegram-osint)
-[![telegram-scraper](https://img.shields.io/badge/telegram--scraper-00D4FF)](https://github.com/topics/telegram-scraper)
-[![social-media-osint](https://img.shields.io/badge/social--media--osint-00D4FF)](https://github.com/topics/social-media-osint)
-[![humint](https://img.shields.io/badge/humint-00D4FF)](https://github.com/topics/humint)
-[![threat-intelligence](https://img.shields.io/badge/threat--intelligence-8B5CF6)](https://github.com/topics/threat-intelligence)
-[![threat-intel](https://img.shields.io/badge/threat--intel-8B5CF6)](https://github.com/topics/threat-intel)
-[![cyber-threat-intelligence](https://img.shields.io/badge/cyber--threat--intelligence-8B5CF6)](https://github.com/topics/cyber-threat-intelligence)
-[![cti](https://img.shields.io/badge/cti-8B5CF6)](https://github.com/topics/cti)
-[![threat-hunting](https://img.shields.io/badge/threat--hunting-8B5CF6)](https://github.com/topics/threat-hunting)
-[![ioc](https://img.shields.io/badge/ioc-8B5CF6)](https://github.com/topics/ioc)
-[![c2](https://img.shields.io/badge/c2-8B5CF6)](https://github.com/topics/c2)
-[![malware-analysis](https://img.shields.io/badge/malware--analysis-8B5CF6)](https://github.com/topics/malware-analysis)
-[![ransomware](https://img.shields.io/badge/ransomware-8B5CF6)](https://github.com/topics/ransomware)
-[![apt](https://img.shields.io/badge/apt-8B5CF6)](https://github.com/topics/apt)
-[![hacktivism](https://img.shields.io/badge/hacktivism-8B5CF6)](https://github.com/topics/hacktivism)
-[![threat-intelligence-platform](https://img.shields.io/badge/threat--intelligence--platform-FFBE0B)](https://github.com/topics/threat-intelligence-platform)
-[![data-aggregator](https://img.shields.io/badge/data--aggregator-FFBE0B)](https://github.com/topics/data-aggregator)
-[![data-collection](https://img.shields.io/badge/data--collection-FFBE0B)](https://github.com/topics/data-collection)
-[![self-hosted](https://img.shields.io/badge/self--hosted-FFBE0B)](https://github.com/topics/self-hosted)
-[![cybersecurity](https://img.shields.io/badge/cybersecurity-FFBE0B)](https://github.com/topics/cybersecurity)
-[![infosec](https://img.shields.io/badge/infosec-FFBE0B)](https://github.com/topics/infosec)
+[![OSINT](https://img.shields.io/badge/OSINT-crime%20%2B%20cyber-00D4FF)]()
+[![Search](https://img.shields.io/badge/search-specialized-8B5CF6)]()
 
 > ⚠️ **Aviso legal**: herramienta de investigación. Los resultados son coincidencias textuales automáticas y **no implican vinculación ni responsabilidad**. Verifica siempre en la fuente original. Ver [LEGAL.md](LEGAL.md).
 
@@ -36,27 +16,30 @@
 
 ## 🇬🇧 English summary
 
-A dual-mode OSINT toolkit (Python 3.8+) for **organized crime** and **cyber threat intelligence**. It aggregates 15+ public sources (Wikidata, GDELT, MITRE ATT&CK, OFAC, UN, OpenSanctions, URLhaus, Feodo, Ransomware.live, 46 cybersecurity feeds, passive Telegram scraping), classifies findings with an Andrómeda-style ruleset (health 🏥 / energy ⚡ threat detection included) and serves a self-hosted web panel with world map, charts, translation and persistent history. **Free and open source under AGPL-3.0.** See [LEGAL.md](LEGAL.md) for GDPR notes.
+A **specialized OSINT search engine** (Python 3.8+) for **organized crime** and **cyber threat intelligence**. Unlike feed aggregators or plain scrapers, it maintains its own index, applies domain-specific query logic and classification (Andrómeda-style, with health 🏥 / energy ⚡ threat detection), and uses **passive scraping** (public Telegram channels, 15+ public sources) as one of its ingestion capabilities. Self-hosted web panel with world map, charts, translation and persistent history. **Free and open source under AGPL-3.0.** See [LEGAL.md](LEGAL.md) for GDPR notes.
 
 ---
 
 ## 🧩 Ecosistema Nexus · cada herramienta en su casa
 
-OSINT Crimen + Cyber forma parte del ecosistema **Nexus**, un conjunto de herramientas independientes que se comunican por APIs HTTP locales. Cada una vive en su propio repositorio y se puede usar por separado.
+OsintCiberCrimeX forma parte del ecosistema **Nexus**, un conjunto de herramientas independientes que se comunican por APIs HTTP locales. Cada una vive en su propio repositorio y se puede usar por separado.
 
 | Herramienta | Rol | Repositorio | Estado |
 |---|---|---|---|
-| **Nexus_Osint_X** | Base central de mando OSINT (radar, mapa 3D, correlación, ATT&CK, panel JARVIS) | `Condor2026/Nexus_Osint_X` | Prototipo funcional (v3.1) |
-| **OsintCiberCrimeX** (este repo) | **Buscador OSINT dual** (crimen + cyber) en Telegram y 15+ fuentes: IOCs, C2, CVE, grupos, canales | `Condor2026/OsintCiberCrimeX` | **v1.15.0** funcional · publicación ampliada **dic 2026** |
+| **Nexus_Osint_X** | **Radar / base de mando OSINT**: agrega eventos, correlaciona, mapa 3D, ATT&CK, panel JARVIS | `Condor2026/Nexus_Osint_X` | Prototipo funcional (v3.1) |
+| **OsintCiberCrimeX** (este repo) | **Buscador potenciado y específico** de crimen y cyber: índice propio + scraping pasivo + búsqueda especializada | `Condor2026/OsintCiberCrimeX` | **v1.15.0** funcional · release ampliada **dic 2026** |
 | **ThreatJarvisX** | Asistente IA que consulta Nexus por su API | repositorio propio | Activo |
-| **Puente_Nexus** | Enlace OsintCiberCrimeX ↔ Nexus (lanza, vigila, sincroniza) | `Condor2026/Nexus_Osint_X` | v1.1 funcional |
+| **Puente_Nexus** | Enlace OsintCiberCrimeX ↔ Nexus: lanza, vigila y sincroniza IOCs | `Condor2026/Nexus_Osint_X` | v1.1 funcional |
 
-**Cómo encaja todo:**
+**Diferencia clave entre Nexus y OsintCiberCrimeX:**
+
+- **Nexus** es un **radar**: observa lo que pasa, agrega eventos de 330+ fuentes, correlaciona, dibuja en el mapa. No busca por ti; te muestra el panorama.
+- **OsintCiberCrimeX** es un **buscador**: tú preguntas por un grupo, una IP, un CVE, un canal o un patrón, y él busca en su índice especializado. El scraping es **cómo se alimenta**, no lo que es.
 
 ```
 ┌───────────────────┐        ┌──────────────────┐        ┌─────────────────┐
 │ OsintCiberCrimeX  │  IOCs  │  Puente_Nexus    │ watch  │  Nexus_Osint_X  │
-│   (este repo)     │ ─────► │  (repo Nexus)    │ ─────► │ (mando OSINT)   │
+│   (buscador)      │ ─────► │  (repo Nexus)    │ ─────► │  (radar/mando)  │
 └───────────────────┘        └──────────────────┘        └─────────────────┘
                                                                   ▲
                                                                   │ API HTTP
@@ -66,59 +49,81 @@ OSINT Crimen + Cyber forma parte del ecosistema **Nexus**, un conjunto de herram
                                                            └───────────────┘
 ```
 
-- **OsintCiberCrimeX** funciona **solo**, sin Nexus. Es el buscador.
-- **Nexus_Osint_X** funciona **solo**, sin OsintCiberCrimeX. Es el radar.
-- **Puente_Nexus** es el que los conecta: sincroniza los IOCs de OsintCiberCrimeX a la watchlist de Nexus y cruza eventos. Sin el puente, las dos herramientas no se hablan (lo cual es perfectamente válido).
-
-> **Este repo solo contiene OsintCiberCrimeX.** Nexus_Osint_X, ThreatJarvisX y el Puente_Nexus viven en sus propios repositorios. La integración con el puente se detalla en la sección [Integración con Nexus](#-integración-con-nexus-puente_nexus).
+> **Este repo solo contiene OsintCiberCrimeX.** Nexus_Osint_X, ThreatJarvisX y el Puente_Nexus viven en sus propios repositorios. La integración se detalla en [Integración con Nexus](#-integración-con-nexus-puente_nexus).
 
 ---
 
 ## 🧭 ¿Qué es esto?
 
-OSINT Crimen + Cyber es una herramienta de línea de comandos y panel web pensada para **analistas, investigadores y periodistas** que necesiten consolidar información pública sobre:
+OsintCiberCrimeX es un **buscador OSINT potenciado y específico** para **crimen organizado** y **ciberamenazas**. A diferencia de un agregador de feeds (que muestra lo que va llegando) o de un scraper suelto (que extrae sin más), OsintCiberCrimeX:
+
+1. **Construye y mantiene su propio índice** a partir de fuentes públicas y scraping pasivo.
+2. **Aplica lógica de consulta específica** del dominio: alias de grupos, variantes de nombres, expansión de términos, scoring de relevancia.
+3. **Clasifica** los resultados con reglas estilo Andrómeda (tipo de ataque, salud 🏥, energía ⚡, IOCs).
+4. **Enlaza siempre a la fuente original** para que el analista verifique.
+
+### Qué busca
 
 - **Crimen organizado**: cárteles, maras, mafias, grupos terroristas, guerrillas.
-- **Ciberataques**: APTs, ransomware, botnets, DDoS, hacktivismo, campañas conocidas.
+- **Ciberamenazas**: APTs, ransomware, botnets, DDoS, hacktivismo, campañas.
+- **Entidades**: grupos, personas buscadas, organizaciones sancionadas, canales.
+- **IOCs**: IPs, dominios, CVE, hashes, hashtags, países.
+- **Mensajes**: de canales públicos de Telegram, con metadatos e historia.
 
-Cada búsqueda consulta en paralelo decenas de fuentes públicas, **deduplica**, **clasifica** las entidades y **guarda la evidencia con URL de origen** para que puedas verificarla.
+### Qué lo hace «potenciado»
+
+- **Diccionario de crackers** (~600 grupos) que **expande** la búsqueda con variantes (`LockBit` = `Lock Bit` = `LockBit3`) y **puntúa** los resultados. No filtra: puntúa.
+- **Deduplicación** por URL y por nombre normalizado.
+- **Clasificación Andrómeda**: tipo de ataque + sector crítico (salud, energía) + IOCs extraídos.
+- **Historia de grupos**: primera/última aparición, actividad por mes, mapa de calor, co-menciones, picos.
+- **Scraping pasivo** de canales públicos de Telegram (`t.me/s/`) y 15+ fuentes públicas: el índice se mantiene fresco sin intervención.
+
+### Qué lo hace «específico»
+
+- **Dos modos** (crime / cyber) con fuentes, entidades y colores distintos.
+- **Búsqueda por entidad, grupo, canal, IOC, texto y patrón**.
+- **Panel web** con mapa mundial, gráficos, historial y traducción.
+- **Exportes** pensados para análisis: dossier HTML, GraphML (Gephi/Cytoscape), JSON, CSV, API.
 
 ### Para qué sirve (y para qué no)
 
 ✅ **Sirve para**:
-- Consolidar información pública dispersa sobre un grupo concreto.
+- Buscar información pública dispersa sobre un grupo concreto.
 - Detectar amenazas a **sectores críticos** (salud, energía) en mensajes de Telegram.
 - Generar **dossiers HTML** con fuentes verificables.
 - Monitorizar la actividad de grupos hacktivistas conocidos.
 - Alimentar una base de datos local con IOCs (IPs, dominios, CVE, hashtags).
+- Cruzar lo que encuentra con un radar como Nexus (vía Puente_Nexus).
 
 ❌ **No sirve para**:
 - Atribuir delitos (una coincidencia textual no es una prueba).
 - Vigilancia masiva de personas.
 - Sustituir a un analista humano.
 - Sustituir a las fuentes originales (siempre enlaza a ellas).
+- Ser un radar pasivo: para eso está Nexus.
 
 ---
 
 ## ✨ Características
 
-### 🔍 Búsqueda multi-fuente
-- **15+ fuentes integradas** consultadas en paralelo (ver tabla abajo).
-- **Deduplicación** por URL y por nombre normalizado.
-- **Normalización** de variantes (`LockBit` = `Lock Bit` = `LockBit3`).
-- **Diccionario de crackers** (~600 grupos) que expande la búsqueda con variantes y **puntúa** los resultados.
+### 🔍 Buscador especializado
+- **15+ fuentes integradas** y **scraping pasivo** de canales públicos de Telegram.
+- **Índice propio** (SQLite local) con deduplicación y normalización.
+- **Diccionario de crackers** (~600 grupos) que expande la consulta con variantes y **puntúa** los resultados.
+- **Búsqueda por entidad, grupo, canal, IOC, texto y patrón**.
 
 ### 🧠 Clasificación estilo Andrómeda
 - Detección automática de **tipo de ataque**: DDoS, botnet, ransomware, malware, phishing, exploit, filtración…
 - **Amenazas a la salud** 🏥 y a la **energía** ⚡ mediante listas de palabras clave en español, inglés, ruso y árabe.
 - **IOCs extraídos** de los mensajes: IPs, dominios, CVE, hashtags, países.
 
-### 📡 Telegram pasivo
+### 📡 Scraping pasivo (capacidad de ingesta)
 - Lectura **pasiva** de canales **públicos** (`t.me/s/<canal>`). Sin cuenta, sin unirse, sin escribir.
 - **Metadatos** del canal: ID interno, fecha de creación, renombres, contadores, verificado.
 - **Historia de grupos**: primera/última aparición, actividad por mes, mapa de calor día×hora, co-menciones, picos.
 - **Descubrimiento pasivo** por nombre cuando no tienes el canal.
 - **Escáner en segundo plano** con barra de progreso, ETA y botón de parada.
+- Respeta límites: caché de 1 h, un solo hilo por URL, backoff exponencial, pausa automática si Telegram responde 429.
 
 ### 🗺️ Panel web
 - **Mapa mundial** interactivo (zoom, arrastrar, filtro, exportar SVG).
@@ -216,7 +221,7 @@ Rutas principales:
 - `/dossier/<id>` — dossier HTML descargable
 - `/api/mensajes` — API JSON de mensajes clasificados
 
-### Telegram pasivo
+### Scraping de Telegram
 
 1. Crea un archivo `tg_channels.txt` con un canal público por línea (sin `@`, sin `https://`).
 2. Impórtalos:
@@ -237,7 +242,7 @@ python OsintCiberCrimeX.py --tg-update --tg-pages 0 --tg-workers 0
 
 ## 🔗 Integración con Nexus (Puente_Nexus)
 
-El **Puente_Nexus** (incluido en el repo de **Nexus_Osint_X**) conecta esta herramienta con la base de mando **Nexus_Osint_X**. Funciona como un proceso aparte: lanza/vigila ambas, sincroniza IOCs y cruza eventos. **No modifica** ni este repo ni Nexus.
+El **Puente_Nexus** (incluido en el repo de **Nexus_Osint_X**) conecta este buscador con el radar **Nexus_Osint_X**. Funciona como un proceso aparte: lanza/vigila ambas, sincroniza IOCs y cruza eventos. **No modifica** ni este repo ni Nexus.
 
 ### Qué necesita del lado de OsintCiberCrimeX
 
@@ -301,9 +306,9 @@ Todas las fuentes son públicas y de acceso libre. Cada resultado enlaza a su **
 ## 🏗️ Cómo funciona
 
 ```
-consulta → expansión de variantes → 15+ fuentes en paralelo
-         → deduplicación → SQLite local → clasificación
-         → terminal / panel web / dossier / GraphML / JSON
+consulta → expansión de variantes → índice propio (SQLite) + 15+ fuentes en paralelo
+         → deduplicación → clasificación → búsqueda especializada
+         → terminal / panel web / dossier / GraphML / JSON / API
 ```
 
 **Filosofía del proyecto**:
@@ -311,6 +316,7 @@ consulta → expansión de variantes → 15+ fuentes en paralelo
 2. **Nunca descartar por score**: el diccionario de crackers **puntúa**, no filtra.
 3. **Enlazar siempre a la fuente original**: cada evidencia tiene su URL.
 4. **Respetar los servidores**: caché de 1 h, un solo hilo por URL, backoff exponencial, pausa automática si Telegram responde 429.
+5. **El scraping es una capacidad, no la identidad**: el valor está en el índice y en la búsqueda especializada, no en raspar por raspar.
 
 ---
 
@@ -381,7 +387,7 @@ Archivos que se crean en runtime (no versionados): base de datos local, cachés,
 
 ## ⚖️ Legal y privacidad
 
-Esta herramienta **no aloja ni recopila datos personales por sí misma**. Es un cliente que consulta fuentes públicas y guarda los resultados **localmente en tu máquina**. Si la ejecutas, **tú** eres el responsable del tratamiento bajo RGPD.
+Esta herramienta **no aloja ni recopila datos personales por sí misma**. Es un buscador que consulta fuentes públicas y guarda los resultados **localmente en tu máquina**. Si la ejecutas, **tú** eres el responsable del tratamiento bajo RGPD.
 
 👉 **Lee [LEGAL.md](LEGAL.md)** antes de usarla con datos de personas.
 
