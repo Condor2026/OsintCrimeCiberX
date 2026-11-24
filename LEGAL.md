@@ -1,150 +1,72 @@
-# ⚖️ Aviso legal, privacidad y RGPD
+# Aviso legal · OsintCiberCrimeX
 
-**Última actualización**: 18-10-2026
-**Proyecto**: OSINT Crimen + Cyber
-**Mantenedor**: Condor2026 (https://github.com/Condor2026)
+Última actualización: 2026-11-24
 
----
+## 1. Naturaleza de la herramienta
 
-## 1. Qué es este proyecto (y qué no)
+OsintCiberCrimeX es un **buscador OSINT potenciado y específico** para crimen organizado y ciberamenazas. Construye un índice propio a partir de **fuentes públicas** (Wikidata, GDELT, MITRE ATT&CK, OFAC, ONU, OpenSanctions, URLhaus, Feodo, Ransomware.live, 46 feeds de ciberseguridad) y de **scraping pasivo** de canales públicos de Telegram (vista web `t.me/s/`).
 
-**OSINT Crimen + Cyber** es una **herramienta de software libre** publicada en GitHub. No es un servicio online, no es una plataforma alojada, no recopila datos por sí misma.
+**No** realiza escaneos activos, **no** explota vulnerabilidades, **no** contacta con infraestructura maliciosa y **no** envía tráfico a los indicadores que muestra.
 
-La herramienta:
-- Se **ejecuta en tu propio ordenador**.
-- Consulta **fuentes públicas** de internet.
-- Guarda los resultados **localmente** en una base de datos SQLite (`osint_crimen.db`).
-- **No envía** los resultados a ningún servidor del autor.
+El **scraping** es una **capacidad de ingesta**, no la identidad de la herramienta: el valor está en el índice y en la búsqueda especializada, no en raspar por raspar.
 
----
+## 2. Fuentes
 
-## 2. Base legal para el tratamiento de datos personales
+- Fuentes públicas citadas en el README.
+- Canales **públicos** de Telegram (sin login, sin cuenta).
+- **Sin verificación independiente.** Los datos reflejan lo que publican las fuentes, no una conclusión forense.
 
-### 2.1. El mantenedor del repositorio
+## 3. Uso permitido
 
-Como **autor y distribuidor del código**, el mantenedor:
+- Investigación defensiva.
+- Threat intelligence.
+- Educación y docencia.
+- Monitorización de amenazas en un SOC.
+- Periodismo de investigación.
 
-- **No trata datos personales** de terceros al publicar el código.
-- **No recibe** los datos que tú introduces o generas al ejecutar la herramienta.
-- **No opera** ninguna instancia alojada del servicio.
+## 4. Uso prohibido
 
-La única excepción sería si el mantenedor alojara una **demo pública**; en tal caso, esa demo tendría su propio aviso de privacidad.
-
-### 2.2. El usuario que ejecuta la herramienta
-
-Si ejecutas esta herramienta, **tú** te conviertes en el **responsable del tratamiento** (Art. 4.7 RGPD) de los datos personales que aparezcan en tus resultados.
-
-**Base legal recomendada**: **Interés legítimo** (Art. 6.1.f RGPD), para las siguientes finalidades:
-
-- Investigación periodística.
-- Análisis de amenazas (threat intelligence).
-- Concienciación y divulgación en ciberseguridad.
-- Investigación académica.
-
-**No** se recomienda su uso para:
-- Marketing directo o prospección comercial no solicitada.
+- Ataques activos, escaneos no autorizados o acceso a sistemas ajenos.
+- Acciones legales basadas únicamente en estos datos.
+- Acoso, doxxing o represalia contra personas u organizaciones.
 - Vigilancia masiva de personas.
-- Perfilado automatizado con efectos jurídicos.
-- Tratamiento de datos de categorías especiales (salud, ideología, etc.) sin base específica.
+- Cualquier uso que infrinja la ley de tu jurisdicción o los términos de servicio de las fuentes.
 
-### 2.3. Fuentes de datos personales
+## 5. Falsos positivos
 
-La herramienta consulta **fuentes públicas y oficiales**:
+La herramienta **puede equivocarse**. Los resultados son **coincidencias textuales automáticas** y **no implican vinculación ni responsabilidad**. Los grupos hacktivistas exageran y mienten; los canales se repiten entre sí; las IPs pueden ser víctimas, proxies, nodos Tor/VPN o IPs reasignadas.
 
-- OFAC SDN (https://sanctionssearch.ofac.treas.gov/) — dominio público.
-- ONU Consolidated (https://scsanctions.un.org/) — acceso público.
-- FBI Wanted (https://www.fbi.gov/wanted) — API pública.
-- INTERPOL Red Notices (https://www.interpol.int/) — notificaciones rojas públicas.
-- OpenSanctions (https://www.opensanctions.org/) — agregador de fuentes públicas.
-- Wikidata (CC0), Wikipedia (CC BY-SA), MITRE ATT&CK, GDELT, Google News, RSS.
+**No tomes decisiones graves** (legales, laborales, de seguridad física o de represalia) basándote solo en lo que muestra esta herramienta. Contrasta siempre con la fuente original.
 
-Todas ellas son **públicas**, y su reutilización está permitida por sus respectivas licencias o por su naturaleza oficial.
+## 6. Privacidad y datos (RGPD)
 
----
+- La herramienta **no** requiere cuenta de Telegram ni login.
+- La herramienta **no** recopila datos personales de los usuarios de Telegram.
+- Los mensajes leídos son **públicos**.
+- Los resultados se guardan **localmente en tu máquina**. **Tú** eres el responsable del tratamiento bajo RGPD.
+- Si eres titular de un canal y quieres que no se lea, **no lo listes** en `tg_channels.txt` o abre un issue.
+- Si eres titular de una IP listada y crees que es un error, abre un issue y se revisa.
 
-## 3. Datos que la herramienta almacena localmente
+## 7. Terceros
 
-Cuando ejecutas la herramienta, en tu propio ordenador se guarda:
+- **Telegram**: el uso de `t.me/s/` está sujeto a los términos de Telegram. La herramienta solo hace lectura pasiva.
+- **Dependencias**: las librerías de terceros tienen sus propias licencias (ver `requirements.txt`).
+- **Nexus_Osint_X / Puente_Nexus / ThreatJarvisX**: herramientas del mismo ecosistema, con sus propios avisos legales.
 
-- `osint_crimen.db` — entidades, evidencias, sanciones, historial. Puede contener nombres de personas.
-- `opensanctions_crime.jsonl` — volcado de sanciones (bajo demanda).
-- `un_consolidated.xml` — lista ONU (bajo demanda).
-- `ofac_sdn.xml` — lista OFAC (bajo demanda).
-- `watch_state/` — estado de la watchlist.
-- `tg_channels.txt` — configuración de canales.
+## 8. Garantías
 
-**Tú eres el único responsable de estos archivos**. Se recomienda:
+La herramienta se distribuye **«tal cual»**, sin garantías de ningún tipo, expresas o implícitas, incluyendo, pero no limitándose a, garantías de comerciabilidad, idoneidad para un propósito particular y no infracción. Ver `LICENSE` (AGPL-3.0).
 
-- **No commitearlos** en Git (ya están en `.gitignore`).
-- **No compartirlos** sin anonimizar.
-- **Borrar** los datos que ya no necesites (Art. 5.1.e RGPD — limitación del plazo de conservación).
-- **Cifrar** el disco si trabajas con datos sensibles (BitLocker, LUKS, FileVault).
+## 9. Responsabilidad
 
----
+El autor **no se responsabiliza** del uso indebido de la herramienta ni de las consecuencias derivadas de decisiones tomadas a partir de sus resultados. El uso es responsabilidad exclusiva de quien lo hace.
 
-## 4. Traducción opcional (terceros)
+## 10. Licencia
 
-La herramienta incluye un **botón de traducción** en el panel web y la opción `--feed-translate` en terminal. Esta función:
+AGPL-3.0. Ver [`LICENSE`](./LICENSE).
 
-- **Solo se activa si el usuario lo pulsa/usa**.
-- **Envía el texto de la evidencia** a Google Translate (API no oficial `translate.googleapis.com`) y MyMemory (respaldo).
-- **Requiere consentimiento explícito** la primera vez (confirmación en el navegador).
+## 11. Contacto
 
-**No uses la traducción** con material sensible o reservado. Para entornos profesionales, considera un traductor **local** (Argos Translate, LibreTranslate).
+Abre un issue en el repositorio para cualquier duda legal o de atribución. **No incluyas datos sensibles** en el issue.
 
----
-
-## 5. Derechos de los interesados (RGPD)
-
-Si una persona aparece en tu base de datos local y ejerce sus derechos (acceso, rectificación, supresión, oposición, limitación, portabilidad), **tú** debes atender la solicitud.
-
-**Recomendación**: si publicas o compartes resultados, incluye siempre:
-
-- La **fuente original** de cada dato (URL).
-- Un **aviso** de que la información proviene de una fuente pública.
-- Un **email de contacto** para solicitudes de rectificación o supresión.
-
-Como el mantenedor del repositorio **no tiene acceso** a tu base local, no puede atender esas solicitudes por ti.
-
----
-
-## 6. Limitación de responsabilidad
-
-El software se distribuye **"tal cual"**, sin garantía de ningún tipo (ver LICENSE, sección 15–17). En particular:
-
-- Los resultados son **coincidencias textuales automáticas** y **no implican vinculación, culpabilidad ni responsabilidad** de las personas o entidades mencionadas.
-- El mantenedor **no se hace responsable** del uso que terceros hagan de la herramienta.
-- El usuario es el **único responsable** del cumplimiento normativo en su jurisdicción.
-
----
-
-## 7. Buenas prácticas recomendadas
-
-✅ **Haz**:
-- Verificar cada dato en la fuente original antes de publicarlo.
-- Citar siempre la fuente y la fecha.
-- Anonimizar cuando publiques resultados.
-- Respetar los plazos de conservación.
-- Usar la herramienta para fines de investigación, no de vigilancia masiva.
-
-❌ **No hagas**:
-- Publicar nombres de personas sin contexto ni fuente.
-- Usar los resultados para acosar, doxxear o discriminar.
-- Alojar una demo pública sin aviso de privacidad.
-- Vender los datos personales obtenidos.
-
----
-
-## 8. Contacto
-
-Para cuestiones legales o de privacidad **sobre el repositorio** (no sobre tu base local):
-
-📬 **KiraSecurity@proton.me**
-
-Para cuestiones de **seguridad del software**, ver SECURITY.md.
-
----
-
-## 9. Cambios en este aviso
-
-Este aviso puede actualizarse. La fecha de "Última actualización" al inicio del documento refleja la versión vigente. Los cambios sustanciales se anunciarán en el CHANGELOG y en las *releases* de GitHub.
+Contacto comercial (servicios de inteligencia): **SpectrumSecIt@proton.me**.
